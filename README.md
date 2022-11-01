@@ -1,6 +1,6 @@
 ## Leon Du Star's corner of the aframe-verse 
 
-
+* click [HERE to VISIT ONLINE](https://coderofsalvation.github.io/aframe-verse-leondustar/apps/)
 
 ## Join us! Add your own aframe-verse
 
