@@ -1,5 +1,6 @@
 <html>
   <head>
+    <base href="./">
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="./../components/aframe-verse-component.js"></script>
   </head>
@@ -8,23 +9,22 @@
     <a-scene background="color: black" cursor="rayOrigin:mouse" raycaster="objects: .hit">
 
       <a-entity aframe-verse="register: ./../aframe-verse.json">
-        <script src="https://coderofsalvation.github.io/aframe-verse-leondustar/components/unlit.js"></script>
-        <script src="https://coderofsalvation.github.io/aframe-verse-leondustar/components/aframe-gltf-to-entity.js"></script>
-        <script src="https://coderofsalvation.github.io/aframe-verse-leondustar/components/button.js"></script>
+        <script src="components/unlit.js"></script>
+        <script src="components/aframe-gltf-to-entity.js"></script>
+        <script src="components/button.js"></script>
 
-        <a-entity id="scene" gltf-model="https://coderofsalvation.github.io/aframe-verse-leondustar/apps/index.glb" 
-                             sound="autoplay:true; loop:true; positional:true; src: https://coderofsalvation.github.io/aframe-verse-leondustar/apps/index.wav"></a-entity>
-        <a-entity unlit gltf-to-entity="from: #scene; name: Cube"></a-entity>
+        <a-entity id="scene" gltf-model="./index.glb" 
+                             sound="autoplay:true; loop:true; positional:true; src: ./index.wav"></a-entity>
+        <!-- <a-entity unlit gltf-to-entity="from: #scene; name: Cube"></a-entity> -->
+
+        <a-entity light="color: #FFF; intensity:3" position="-0.56 2.395 0.037"></a-entity>
 
         <a-text position="-1.5 2 -4" width="4" wrapPixels="999" value="coderofsalvation.github.io/aframe-verse-leondustar" color="#aaaaaa"></a-text>
 
         <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
-          <a-entity id="boxButton" button="label: app2.html; width:0.24" position="0 0.1 0" href="https://coderofsalvation.github.io/aframe-verse-leondustar/apps/app2.html"></a-entity>
-          <a-entity id="boxButton" button="label: back to home; width:0.24" position="0 0 0" href="./index.html"></a-entity>
+          <a-entity id="boxButton" button="label: app2.html; width:0.24; color: #223" position="0 0.1 0" href="/apps/app2.html"></a-entity>
+          <a-entity id="boxButton" button="label: back to home; width:0.24; color: #223" position="0 0 0" href="./index.html"></a-entity>
         </a-entity>
-
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="9" height="9" color="#00AAFF"></a-plane>
-        <a-sky color="#00FFAA"></a-sky>
 
       </a-entity>
       
