@@ -4,14 +4,24 @@
     <script src="./../components/aframe-verse-component.js"></script>
   </head>
   <body>
+
     <a-scene background="color: black" cursor="rayOrigin:mouse" raycaster="objects: .hit">
 
       <a-entity aframe-verse="register: ./../aframe-verse.json">
+        <script src="./../components/unlit.js"></script>
+        <script src="./../components/aframe-gltf-to-entity.js"></script>
+        <script src="./../components/button.js"></script>
 
-        <a-text position="-1 1.7 -5" value="This is index.html on an external verse" color="#aaaaaa"></a-text>
+        <a-entity id="scene" gltf-model="./index.glb" 
+                             sound="autoplay:true; loop:true; positional:true; src: ./index.wav"></a-entity>
+        <a-entity unlit gltf-to-entity="from: #scene; name: Cube"></a-entity>
 
-        <a-text position="1.0 1.87 -3.259" rotation="0 -45 0" value="click cylinder" color="#aaaaaa" scale="0.6 0.6 0.6"></a-text>
-        <a-cylinder position="1.5 0.75 -3" radius="0.5" height="1.5" color="#00173d" href="https://coderofsalvation.github.io/aframe-verse-leondustar/apps/app2.html"></a-cylinder>
+        <a-text position="-1.5 2 -4" width="4" value="coderofsalvation.github.io/aframe-verse-leondustar" color="#aaaaaa"></a-text>
+
+        <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
+          <a-entity id="boxButton" button="label: app2.html; width:0.24" position="0 0.1 0" href="https://coderofsalvation.github.io/aframe-verse-leondustar/apps/app2.html"></a-entity>
+          <a-entity id="boxButton" button="label: back to home; width:0.24" position="0 0 0" href="./index.html"></a-entity>
+        </a-entity>
 
         <a-plane position="0 0 -4" rotation="-90 0 0" width="9" height="9" color="#00AAFF"></a-plane>
         <a-sky color="#00FFAA"></a-sky>
